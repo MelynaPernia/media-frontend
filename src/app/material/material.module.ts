@@ -8,7 +8,11 @@ import {
   MatIconModule,
   MatFormFieldModule,
   MatInputModule,
-  MatCardModule
+  MatCardModule,
+  MatSidenavModule,
+  MatMenuModule,
+  MatDividerModule,
+  MatToolbarModule
 } from '@angular/material';
 
 
@@ -23,7 +27,11 @@ import {
     MatIconModule,
     MatFormFieldModule,
     MatInputModule,
-    MatCardModule
+    MatCardModule,
+    MatSidenavModule,
+    MatMenuModule,
+    MatDividerModule,
+    MatToolbarModule
   ],
   exports: [
     MatTableModule,
@@ -33,7 +41,11 @@ import {
     MatIconModule,
     MatFormFieldModule,
     MatInputModule,
-    MatCardModule
+    MatCardModule,
+    MatSidenavModule,
+    MatMenuModule,
+    MatDividerModule,
+    MatToolbarModule
   ]
 })
 export class MaterialModule {

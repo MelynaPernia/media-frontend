@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { PacienteService } from 'src/app/_service/paciente.service';
 import { Paciente } from 'src/app/_model/paciente';
 
@@ -13,12 +13,44 @@ export class PacienteEdicionComponent implements OnInit {
   form: FormGroup;
   id: number;
   edicion: boolean;
-  constructor(private route: ActivatedRoute, private pacienteService: PacienteService ) { }
+  constructor(private route: ActivatedRoute,
+    private pacienteService: PacienteService,
+    private router: Router ) { }
 
   ngOnInit() {
     this.formBuild();
   }
   operar(){
+    let paciente = new Paciente(); // Creando un objeto
+    paciente.idPaciente = this.form.value['idPaciente'];
+    paciente.nombres = this.form.value['nombres'];
+    paciente.apellidos = this.form.value['apellidos'];
+    paciente.dni = this.form.value['dni'];
+    paciente.direccion = this.form.value['direccion'];
+    paciente.telefono = this.form.value['telefono'];
+    console.log(paciente)
+    if(this.edicion){
+      //Llamar al servicio de edicions
+      this.pacienteService.modificar(paciente).subscribe(()=>{
+        this.pacienteService.listar().subscribe(data => {
+          this.pacienteService.pacienteCambio.next(data); // estoy mandando a la variable
+        })
+        // console.log()
+        // Es una variable reactiva
+        // this.pacienteService.pacienteCambio.next(data);
+
+      })
+    } else {
+      this.pacienteService.registrar(paciente).subscribe(()=>{
+        this.pacienteService.listar().subscribe(data => {
+          this.pacienteService.pacienteCambio.next(data);
+        })
+      })
+      // lllamar al servicio de nuevo
+      // this.pacienteService.ELIMINAR(paciente.idPaciente).subscribe()
+    }
+  this.router.navigate(['/paciente'])
+
 
   }
 

@@ -19,6 +19,10 @@ export class PacienteComponent implements OnInit {
   constructor( private pacienteService: PacienteService) { }
 
   ngOnInit() {
+    // Se dispara únicamente cuando a la variable en algún momento le hicieron next.
+    this.pacienteService.pacienteCambio.subscribe((data)=> {
+      this.listarPaciente();
+    })
     this.listarPaciente();
   }
   listarPaciente() {
@@ -35,6 +39,15 @@ export class PacienteComponent implements OnInit {
   applyFilter(filterValue: string) {
     // Trim cortar
     this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
+  eliminar(idPaciente:number){
+    this.pacienteService.eliminar(idPaciente).subscribe(()=> {
+      // this.listarPaciente();
+      this.pacienteService.listar().subscribe(data=> {
+        this.pacienteService.pacienteCambio.next(data);
+      })
+    })
   }
 
 }

@@ -9,12 +9,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from './material/material.module';
 import { PacienteEdicionComponent } from './pages/paciente/paciente-edicion/paciente-edicion.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MedicoEdicionComponent } from './pages/medico/medico-edicion/medico-edicion.component';
+import { MedicoComponent } from './pages/medico/medico.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PacienteComponent,
-    PacienteEdicionComponent
+    PacienteEdicionComponent,
+    MedicoEdicionComponent,
+    MedicoComponent
   ],
   imports: [
     BrowserModule,

@@ -1,35 +1,34 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Paciente } from '../_model/paciente';
+import { Injectable } from "@angular/core";
 import { environment } from 'src/environments/environment';
 import { Subject } from 'rxjs';
-
+import { Medico } from '../_model/medico';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
-export class PacienteService {
-  // String template   --- se usa el operador back holl
-  url: string = `${environment.HOST}/paciente`;
+
+export class MedicoService {
+  url: string = `${environment.HOST}/medico`;
   // Variable reactiva
-  pacienteCambio = new Subject<Paciente[]>();
+  medicoCambio = new Subject<Medico[]>();
 
   // Inyección de dependencias.
   constructor(private httpCLient: HttpClient) { }
   listar(){
     // Arreglo de pacientes
-    return this.httpCLient.get<Paciente[]>(this.url)
+    return this.httpCLient.get<Medico[]>(this.url)
   }
   listarPorId(idPaciente: number){
-    return this.httpCLient.get<Paciente>(`${this.url}/${idPaciente}`);
+    return this.httpCLient.get<Medico>(`${this.url}/${idPaciente}`);
   }
 
-  registrar(paciente: Paciente){
+  registrar(paciente: Medico){
     // el segundo parametro es lo que va en el body
     return this.httpCLient.post(this.url, paciente);
   }
 
-  modificar(paciente: Paciente){
+  modificar(paciente: Medico){
     return this.httpCLient.put(this.url, paciente);
   }
 
@@ -37,4 +36,3 @@ export class PacienteService {
     return this.httpCLient.delete(`${this.url}/${idPaciente}`);
   }
 }
-
