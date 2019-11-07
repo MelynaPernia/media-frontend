@@ -1,0 +1,17 @@
+<!-- <h1 mat-dialog-title>Hi {{data.name}}</h1> -->
+<div mat-dialog-content>
+  <p>What's your favorite animal?</p>
+  <mat-form-field>
+    <input matInput [(ngModel)]="medico.nombres">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="medico.apellidos">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="medico.cmp">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="operar()">Aceptar</button>
+  <button mat-button  (click)="cancelar()">Cancelar</button>
+</div>

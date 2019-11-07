@@ -15,7 +15,9 @@ const routes: Routes = [
   {
     path: 'medico', component: MedicoComponent,
     children: [
-      { path: 'edicion/:id', component: MedicoEdicionComponent }
+      { path: 'edicion/:id', component: MedicoEdicionComponent },{
+        path: 'nuevo', component: MedicoEdicionComponent
+      }
     ]
   }
 

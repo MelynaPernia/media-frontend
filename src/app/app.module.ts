@@ -8,9 +8,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from './material/material.module';
 import { PacienteEdicionComponent } from './pages/paciente/paciente-edicion/paciente-edicion.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MedicoEdicionComponent } from './pages/medico/medico-edicion/medico-edicion.component';
 import { MedicoComponent } from './pages/medico/medico.component';
+import { MedicoDialogComponent } from './pages/medico/medico-dialog/medico-dialog.component';
 
 @NgModule({
   declarations: [
@@ -18,15 +19,18 @@ import { MedicoComponent } from './pages/medico/medico.component';
     PacienteComponent,
     PacienteEdicionComponent,
     MedicoEdicionComponent,
-    MedicoComponent
+    MedicoComponent,
+    MedicoDialogComponent
   ],
+  entryComponents:[MedicoDialogComponent], // Mostrar un componenete dentro de otro
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
