@@ -12,6 +12,10 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MedicoEdicionComponent } from './pages/medico/medico-edicion/medico-edicion.component';
 import { MedicoComponent } from './pages/medico/medico.component';
 import { MedicoDialogComponent } from './pages/medico/medico-dialog/medico-dialog.component';
+import { ExamenComponent } from './pages/examen/examen.component';
+import { EspecialidadComponent } from './pages/especialidad/especialidad.component';
+import { ExamenEdicionComponent } from './pages/examen/examen-edicion/examen-edicion.component';
+import { EspecialidadEdicionComponent } from './pages/especialidad/especialidad-edicion/especialidad-edicion.component';
 
 @NgModule({
   declarations: [
@@ -20,9 +24,13 @@ import { MedicoDialogComponent } from './pages/medico/medico-dialog/medico-dialo
     PacienteEdicionComponent,
     MedicoEdicionComponent,
     MedicoComponent,
-    MedicoDialogComponent
+    MedicoDialogComponent,
+    ExamenComponent,
+    EspecialidadComponent,
+    ExamenEdicionComponent,
+    EspecialidadEdicionComponent
   ],
-  entryComponents:[MedicoDialogComponent], // Mostrar un componenete dentro de otro
+  entryComponents:[MedicoDialogComponent], // Mostrar un componenete dentro de otro,es cuando un componente es embebido
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

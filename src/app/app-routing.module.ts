@@ -2,8 +2,9 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router'
 import { PacienteComponent } from './pages/paciente/paciente.component';
 import { PacienteEdicionComponent } from './pages/paciente/paciente-edicion/paciente-edicion.component';
-import { MedicoEdicionComponent } from './pages/medico/medico-edicion/medico-edicion.component';
 import { MedicoComponent } from './pages/medico/medico.component';
+import { ExamenComponent } from './pages/examen/examen.component';
+import { EspecialidadComponent } from './pages/especialidad/especialidad.component';
 
 const routes: Routes = [
   {
@@ -13,13 +14,16 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'medico', component: MedicoComponent,
-    children: [
-      { path: 'edicion/:id', component: MedicoEdicionComponent },{
-        path: 'nuevo', component: MedicoEdicionComponent
-      }
-    ]
+    path: 'medico', component: MedicoComponent
+  },
+  {
+    path: 'examen', component: ExamenComponent
+  },
+  {
+    path: 'especialidad', component: EspecialidadComponent
   }
+
+
 
 ]
 @NgModule({

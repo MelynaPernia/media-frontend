@@ -11,7 +11,7 @@ import { HttpClient } from '@angular/common/http';
 export class MedicoService {
   url: string = `${environment.HOST}/medico`;
   // Variable reactiva
-  medicoCambio = new Subject<Medico[]>();
+  medicoCambio = new Subject<Medico[]>(); // Tipo de dato array
   mensajeCambio = new Subject<string>();
 
   // Inyección de dependencias.
