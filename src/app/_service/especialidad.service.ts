@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Especialidad } from '../_model/especialidad';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +10,8 @@ import { Especialidad } from '../_model/especialidad';
 
 export class EspecialidadService {
   url: string = `${environment.HOST}/especialidad`;
+  especialidadCambio = new Subject<Especialidad[]>();
+  mensajeCambio = new Subject<string>();
   constructor( private http: HttpClient){}
 
   listar(){

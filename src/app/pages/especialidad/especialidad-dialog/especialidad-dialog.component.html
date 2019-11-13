@@ -1,0 +1,11 @@
+<div mat-dialog-content>
+  <div>{{especialidad|json}}</div>
+  <mat-form-field>
+    <input matInput [(ngModel)]="especialidad.nombre" placeholder="Especialidad">
+  </mat-form-field>
+</div>
+<div mat-dialog-actiones>
+  <button mat-button (click)="operar()">Aceptar</button>
+  <button mat-button (click)="cancelar()">Cancelar</button>
+
+</div>
