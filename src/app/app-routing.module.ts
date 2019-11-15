@@ -5,6 +5,7 @@ import { PacienteEdicionComponent } from './pages/paciente/paciente-edicion/paci
 import { MedicoComponent } from './pages/medico/medico.component';
 import { ExamenComponent } from './pages/examen/examen.component';
 import { EspecialidadComponent } from './pages/especialidad/especialidad.component';
+import { ExamenEdicionComponent } from './pages/examen/examen-edicion/examen-edicion.component';
 
 const routes: Routes = [
   {
@@ -17,7 +18,11 @@ const routes: Routes = [
     path: 'medico', component: MedicoComponent
   },
   {
-    path: 'examen', component: ExamenComponent
+    path: 'examen', component: ExamenComponent,
+    children: [
+      {path: 'nuevo', component: ExamenEdicionComponent},
+      {path: 'edicion/:id', component: ExamenEdicionComponent}
+    ]
   },
   {
     path: 'especialidad', component: EspecialidadComponent

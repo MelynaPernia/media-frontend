@@ -1,5 +1,5 @@
 export class Examen {
   public idExamen: number;
-  public nombre: string;
+  public nombres: string;
   public descripcion: string;
 }

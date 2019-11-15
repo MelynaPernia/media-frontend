@@ -1,1 +1,23 @@
-<p>examen-edicion works!</p>
+<mat-card>Ingrese los datos del examen</mat-card>
+<form class="example-container" (ngSubmit)="operar()" [formGroup]="form" #formExamen="ngForm">
+  <div [hidden]="true">
+    <mat-form-field>
+      <input matInput placeholder="ID"  formControlName="idExamen" >
+    </mat-form-field>
+  </div>
+  <mat-form-field>
+    <input matInput placeholder="Nombre" required formControlName="nombres">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Descripción"  required formControlName="descripcion">
+  </mat-form-field>
+  <button mat-raised-button color="primary" type="submit" [disabled]="formExamen.invalid">
+    <mat-icon>done</mat-icon>
+    <span>Aceptar</span>
+  </button>
+  <button mat-raised-button type="button" routerLink="/examen">
+    <mat-icon>close</mat-icon>
+    <span>Cancelar</span>
+  </button>
+
+</form>
