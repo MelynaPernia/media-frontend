@@ -14,7 +14,13 @@ import {
   MatDividerModule,
   MatToolbarModule,
   MatDialogModule,
-  MatSnackBarModule
+  MatSnackBarModule,
+  MatSelectModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
+  MAT_DATE_LOCALE,
+  MatExpansionModule,
+  MatAutocompleteModule
 } from '@angular/material';
 
 
@@ -35,7 +41,12 @@ import {
     MatDividerModule,
     MatToolbarModule,
     MatDialogModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatExpansionModule,
+    MatAutocompleteModule
   ],
   exports: [
     MatTableModule,
@@ -51,7 +62,15 @@ import {
     MatDividerModule,
     MatToolbarModule,
     MatDialogModule,
-     MatSnackBarModule
+    MatSnackBarModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatExpansionModule,
+    MatAutocompleteModule
+  ],
+  providers: [
+    { provide: MAT_DATE_LOCALE, useValue: 'es-ES' } // Es para agregar el idioma
   ]
 })
 export class MaterialModule {

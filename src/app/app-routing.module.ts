@@ -6,6 +6,8 @@ import { MedicoComponent } from './pages/medico/medico.component';
 import { ExamenComponent } from './pages/examen/examen.component';
 import { EspecialidadComponent } from './pages/especialidad/especialidad.component';
 import { ExamenEdicionComponent } from './pages/examen/examen-edicion/examen-edicion.component';
+import { ConsultaComponent } from './pages/consulta/consulta.component';
+import { EspecialComponent } from './pages/consulta/especial/especial.component';
 
 const routes: Routes = [
   {
@@ -26,6 +28,10 @@ const routes: Routes = [
   },
   {
     path: 'especialidad', component: EspecialidadComponent
+  }, {
+    path: 'consulta', component: ConsultaComponent
+  }, {
+    path: 'consulta-especial', component: EspecialComponent
   }
 
 

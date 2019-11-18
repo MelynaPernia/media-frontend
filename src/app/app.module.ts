@@ -17,6 +17,8 @@ import { EspecialidadComponent } from './pages/especialidad/especialidad.compone
 import { ExamenEdicionComponent } from './pages/examen/examen-edicion/examen-edicion.component';
 import { EspecialidadEdicionComponent } from './pages/especialidad/especialidad-edicion/especialidad-edicion.component';
 import { EspecialidadDialogComponent } from './pages/especialidad/especialidad-dialog/especialidad-dialog.component';
+import { ConsultaComponent } from './pages/consulta/consulta.component';
+import { EspecialComponent } from './pages/consulta/especial/especial.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { EspecialidadDialogComponent } from './pages/especialidad/especialidad-d
     EspecialidadComponent,
     ExamenEdicionComponent,
     EspecialidadEdicionComponent,
-    EspecialidadDialogComponent
+    EspecialidadDialogComponent,
+    ConsultaComponent,
+    EspecialComponent
   ],
   entryComponents:[MedicoDialogComponent,EspecialidadDialogComponent], // Mostrar un componenete dentro de otro,es cuando un componente es embebido
   imports: [
